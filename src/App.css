@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: #000000;
 }
 
 
@@ -17,7 +18,7 @@
 
 .picrossHeader {
   background-color: #282c34;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   display: flex;
   /* flex-direction: column; */
   align-items: center;
@@ -26,5 +27,44 @@
   color: white;
 }
 
+/* the following is created by https://www.bestcssbuttongenerator.com/ */
+.tileButtonDefault {
+	box-shadow: 0px 0px 0px 2px #6b6b6b;
+	background:linear-gradient(to bottom, #e2e2e2 5%, #5a5a5a 100%);
+	background-color:#949494;
+	border-radius:3px;
+	border:1px solid #9e9e9e;
+	display:inline-block;
+	cursor:pointer;
+	/* color:#ffffff; */
+	/* font-family:Arial; */
+	/* font-size:19px; */
+	padding:25px 25px;
+	/* text-decoration:none; */
+}
 
+.tileButtonDefault:hover {
+	background:linear-gradient(to bottom, #ffcc00 5%, #ffa200 100%);
+	background-color:#ffcc00;
+}
+
+.tileButtonSuccess {
+	box-shadow: 0px 0px 0px 2px #fad091;
+	background:linear-gradient(to bottom, #ffa200 5%, #ffcc00 100%);
+	background-color:#ffa200;
+	border-radius:3px;
+	border:1px solid #9e9e9e;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:19px;
+	padding:25px 25px;
+	text-decoration:none;
+}
+
+.tileButtonDefault:active {
+	position:relative;
+	top:3px;
+}
 
