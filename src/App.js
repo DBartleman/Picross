@@ -1,4 +1,5 @@
 import './App.css';
+import gameBoardGenerator from './gameBoardGenerator';
 
 function App() {
   function reveal(e) {
@@ -16,22 +17,19 @@ function App() {
     }
     //console.log('The button was clicked.');
   }
-
+  function returnState() { // for state testing purposes :) not final
+    return {
+      rows: 5,
+      columns: 5
+    }
+  }
   return (
     <div className="App">
       <div className="elements">
         <header className="picrossHeader">
           Picross! by Drew
         </header>
-        <div className="gameBoard">
-          game board (testing)
-          <button onClick={reset}> reset </button>
-          <button onClick={reveal} class="tileButtonDefault tileButton"> </button>
-          <button onClick={reveal} class="tileButtonDefault tileButton"> </button>
-          <button onClick={reveal} class="tileButtonDefault tileButton"> </button>
-          <button onClick={reveal} class="tileButtonDefault tileButton"> </button>
-          <button onClick={reveal} class="tileButtonDefault tileButton"> </button>
-        </div>
+        <gameBoardGenerator grid={returnState()}></gameBoardGenerator>
       </div>
     </div>
   );
