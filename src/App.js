@@ -18,10 +18,14 @@ function App() {
     //console.log('The button was clicked.');
   }
   function returnState() { // for state testing purposes :) not final
-    return {
-      rows: 5,
-      columns: 5
-    }
+    let sampleGameBoard = [
+      [1, 1, 1, 1, 1],
+      [1, 1, 1, 1, 1],
+      [1, 1, 1, 1, 1],
+      [1, 1, 1, 1, 1],
+      [1, 1, 1, 1, 1]
+    ];
+    return sampleGameBoard;
   }
   return (
     <div className="App">
