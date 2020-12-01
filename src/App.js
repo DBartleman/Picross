@@ -1,13 +1,8 @@
 import './App.css';
-import gameBoardGenerator from './gameBoardGenerator';
+import GameBoardGenerator from './gameBoardGenerator';
 
 function App() {
-  function reveal(e) {
-    //e.preventDefault();
-    e.target.className = "tileButtonFilled tileButton";
-    e.target.disabled = true;
-    //console.log('The button was clicked.');
-  }
+  
   function reset(e) {
     //e.preventDefault();
     let buttons = document.querySelectorAll("tileButton");
@@ -33,7 +28,7 @@ function App() {
         <header className="picrossHeader">
           Picross! by Drew
         </header>
-        <gameBoardGenerator grid={returnState()}></gameBoardGenerator>
+        <GameBoardGenerator />
       </div>
     </div>
   );
