@@ -2,7 +2,14 @@ import './App.css';
 import GameBoardGenerator from './gameBoardGenerator';
 
 function App() {
-  
+  function generateSolution(height, length) {
+    let solution = [[]];
+    for(let i = 0; i < height; i++) {
+      for(let j = 0; j < length; j++) {
+        solution[i][j] = 0; // my chosen Math.random() implementation should go here
+      }
+    }
+  }
   function reset(e) {
     //e.preventDefault();
     let buttons = document.querySelectorAll("tileButton");
