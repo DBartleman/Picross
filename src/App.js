@@ -10,6 +10,10 @@ function App() {
       }
     }
   }
+  function generateNewGame() {
+    //not sure what should go here to start a new game...
+    //probably something like resetting the buttons and/or generating new solution
+  }
   function reset(e) {
     //e.preventDefault();
     let buttons = document.querySelectorAll("tileButton");
@@ -35,6 +39,7 @@ function App() {
         <header className="picrossHeader">
           Picross! by Drew
         </header>
+        <button onClick={generateNewGame} className="newGameButton"> Generate New Game </button>
         <GameBoardGenerator />
       </div>
     </div>
