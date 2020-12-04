@@ -6,9 +6,10 @@ function App() {
     let solution = [[]];
     for(let i = 0; i < height; i++) {
       for(let j = 0; j < length; j++) {
-        solution[i][j] = 0; // my chosen Math.random() implementation should go here
+        solution[i][j] = Math.round(Math.random()); // between 0 and 1, integers
       }
     }
+    return solution;
   }
   function generateNewGame() {
     //not sure what should go here to start a new game...
@@ -40,6 +41,7 @@ function App() {
           Picross! by Drew
         </header>
         <button onClick={generateNewGame} className="newGameButton"> Generate New Game </button>
+        <button onClick={console.log(generateSolution(3, 3))}> Log Sample Solution (testing) </button>
         <GameBoardGenerator />
       </div>
     </div>
