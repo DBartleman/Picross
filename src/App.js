@@ -3,11 +3,13 @@ import GameBoardGenerator from './gameBoardGenerator';
 
 function App() {
   function generateSolution(height, length) {
-    let solution = [[]];
+    let solution = [[],[],[],[],[]]; // not good
     for(let i = 0; i < height; i++) {
+      let data = [];
       for(let j = 0; j < length; j++) {
-        solution[i][j] = Math.round(Math.random()); // between 0 and 1, integers
+        data.push(Math.round(Math.random())); // between 0 and 1, integers
       }
+      solution.push(data);
     }
     return solution;
   }
@@ -23,16 +25,6 @@ function App() {
       buttons[i].disabled = false;
     }
     //console.log('The button was clicked.');
-  }
-  function returnState() { // for state testing purposes :) not final
-    let sampleGameBoard = [
-      [1, 1, 1, 1, 1],
-      [1, 1, 1, 1, 1],
-      [1, 1, 1, 1, 1],
-      [1, 1, 1, 1, 1],
-      [1, 1, 1, 1, 1]
-    ];
-    return sampleGameBoard;
   }
   return (
     <div className="App">
