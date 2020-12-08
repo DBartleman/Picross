@@ -3,7 +3,7 @@ import GameBoardGenerator from './gameBoardGenerator';
 
 function App() {
   function generateSolution(height, length) {
-    let solution = [[],[],[],[],[]]; // not good
+    let solution = []; 
     for(let i = 0; i < height; i++) {
       let data = [];
       for(let j = 0; j < length; j++) {
@@ -15,7 +15,8 @@ function App() {
   }
   function generateNewGame() {
     //not sure what should go here to start a new game...
-    //probably something like resetting the buttons and/or generating new solution
+    //reloading the page seems to work for now, as it is the only way to refresh the buttons
+    location.reload();
   }
   function reset(e) {
     //e.preventDefault();
@@ -32,9 +33,9 @@ function App() {
         <header className="picrossHeader">
           Picross! by Drew
         </header>
-        <button onClick={generateNewGame} className="newGameButton"> Generate New Game </button>
+        <button onClick={generateNewGame} className="newGameButton">Generate New Game\n(reloads page)</button>
         <button onClick={console.log(generateSolution(3, 3))}> Log Sample Solution (testing) </button>
-        <GameBoardGenerator />
+        <GameBoardGenerator grid={3,3}/>
       </div>
     </div>
   );
