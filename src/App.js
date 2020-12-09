@@ -11,12 +11,15 @@ function App() {
       }
       solution.push(data);
     }
+    //console.log(solution);
     return solution;
   }
   function generateNewGame() {
     //not sure what should go here to start a new game...
     //reloading the page seems to work for now, as it is the only way to refresh the buttons
-    location.reload();
+    
+    // does not work:
+    //location.reload();
   }
   function reset(e) {
     //e.preventDefault();
@@ -33,9 +36,12 @@ function App() {
         <header className="picrossHeader">
           Picross! by Drew
         </header>
-        <button onClick={generateNewGame} className="newGameButton">Generate New Game\n(reloads page)</button>
-        <button onClick={console.log(generateSolution(3, 3))}> Log Sample Solution (testing) </button>
-        <GameBoardGenerator grid={3,3}/>
+        <div className="controlButtons">
+          <button onClick={generateNewGame} className="newGameButton">Generate New Game<br />(reloads page)</button>
+          <button onClick={generateSolution(3, 3)}> Log Sample Solution<br />(testing) </button>
+        </div>
+        
+        <GameBoardGenerator height={3} length={3}/>
       </div>
     </div>
   );
