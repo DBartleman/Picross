@@ -11,7 +11,7 @@ function App() {
       }
       solution.push(data);
     }
-    //console.log(solution);
+    console.log(solution);
     return solution;
   }
   function generateNewGame() {
@@ -34,7 +34,7 @@ function App() {
     <div className="App">
       <div className="elements">
         <header className="picrossHeader">
-          Picross! by Drew
+          Picross!
         </header>
         <div className="controlButtons">
           <button onClick={generateNewGame} className="newGameButton">Generate New Game<br />(reloads page)</button>

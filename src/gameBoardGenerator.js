@@ -1,5 +1,5 @@
 
-function GameBoardGenerator(height, length) {
+function GameBoardGenerator({height, length}) {
     // this function programatically renders a button grid of various size depending on props sent
     function reveal(e) {
         //e.preventDefault();
@@ -8,9 +8,9 @@ function GameBoardGenerator(height, length) {
         //console.log('The button was clicked.');
     }
     // WORKS:
-    // let middle = [];
+    // let entireGrid = [];
     // for(let i = 0; i < 6; i++) {
-    //     middle.push(<button onClick={reveal} className="tileButtonDefault tileButton"> </button>);
+    //     entireGrid.push(<button onClick={reveal} className="tileButtonDefault tileButton"> </button>);
     // }
  
     let entireGrid = [];
