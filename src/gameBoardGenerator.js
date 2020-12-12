@@ -16,9 +16,11 @@ function GameBoardGenerator({height, length}) {
     let entireGrid = [];
     for (let i = 0; i < height; i++) {
         let row = [];
+        //row.push(<div>);
         for (let j = 0; j < length; j++) {
             row.push(<button onClick={reveal} className="tileButtonDefault tileButton"> </button>);
         }
+        //row.push(</div>);
         entireGrid.push(row);
     }
     // <button onClick={reveal} className="tileButtonDefault tileButton"> </button>
