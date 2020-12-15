@@ -1,29 +1,24 @@
+/**
+ *  this function programatically renders a button grid of various size depending on props sent
+ * @param {integer} height - the height of the grid, or how many buttons vertically
+ * @param {integer} length - the length of the grid, or how many buttons horizontally
+ */
 
-function GameBoardGenerator({height, length}) {
-    // this function programatically renders a button grid of various size depending on props sent
+function GameBoardGenerator({height, length}) { 
     function reveal(e) {
         //e.preventDefault();
         e.target.className = "tileButtonFilled tileButton";
         e.target.disabled = true;
-        //console.log('The button was clicked.');
     }
-    // WORKS:
-    // let entireGrid = [];
-    // for(let i = 0; i < 6; i++) {
-    //     entireGrid.push(<button onClick={reveal} className="tileButtonDefault tileButton"> </button>);
-    // }
  
     let entireGrid = [];
     for (let i = 0; i < height; i++) {
         let row = [];
-        //row.push(<div>);
         for (let j = 0; j < length; j++) {
             row.push(<button onClick={reveal} className="tileButtonDefault tileButton"> </button>);
         }
-        //row.push(</div>);
         entireGrid.push(row);
     }
-    // <button onClick={reveal} className="tileButtonDefault tileButton"> </button>
     return (
         <div className="gameBoard">
             {entireGrid}
