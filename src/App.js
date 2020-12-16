@@ -1,7 +1,10 @@
+import React, { useState } from 'react';
 import './App.css';
 import GameBoardGenerator from './gameBoardGenerator';
 
 function App() {
+  const [board, setBoard] = useState(<GameBoardGenerator height={3} length={3} />); // valid??????
+  
   function generateSolution(height, length) {
     let solution = []; 
     for(let i = 0; i < height; i++) {
@@ -20,6 +23,10 @@ function App() {
     
     // does not work:
     //location.reload();
+    //deprecated:
+    //window.location.reload(false);
+
+    //refresh page by changing stuff in state instead - dump board out of state
   }
   function reset(e) {
     //e.preventDefault();
