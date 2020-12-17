@@ -4,7 +4,8 @@ import GameBoardGenerator from './gameBoardGenerator';
 
 function App() {
   const [board, setBoard] = useState(<GameBoardGenerator height={3} length={3} />); // valid??????
-  
+  let height = 3;
+  let length = 3;
   function generateSolution(height, length) {
     let solution = []; 
     for(let i = 0; i < height; i++) {
@@ -45,10 +46,10 @@ function App() {
         </header>
         <div className="controlButtons">
           <button onClick={generateNewGame} className="newGameButton">Generate New Game<br />(reloads page)</button>
-          <button onClick={generateSolution(3, 3)}> Log Sample Solution<br />(testing) </button>
+          <button onClick={generateSolution(height, length)}> Log Sample Solution<br />(testing) </button>
         </div>
         
-        <GameBoardGenerator height={3} length={3}/>
+        <GameBoardGenerator height length/>
       </div>
     </div>
   );
