@@ -10,15 +10,22 @@ function GameBoardGenerator({height, length}) {
         e.target.className = "tileButtonFilled tileButton";
         e.target.disabled = true;
     }
- 
-    let entireGrid = [];
-    for (let i = 0; i < height; i++) {
-        let row = [];
-        for (let j = 0; j < length; j++) {
-            row.push(<button onClick={reveal} className="tileButtonDefault tileButton"> </button>);
-        }
-        entireGrid.push(row);
+    if(height > 51 || length > 51) {
+        return(<div />);
     }
+    // let entireGrid = [];
+    // for (let i = 0; i < height; i++) {
+    //     let row = [];
+    //     for (let j = 0; j < length; j++) {
+    //         row.push(<button onClick={reveal} className="tileButtonDefault tileButton"> </button>);
+    //     }
+    //     entireGrid.push(row);
+    // }
+    const style = {
+        display: "grid",
+        gridTemplate: "repeat(3, 1fr) / repeat(3, 1fr)",
+    };
+
     return (
         <div className="gameBoard">
             {entireGrid}
