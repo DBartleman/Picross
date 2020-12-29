@@ -18,6 +18,19 @@ function App() {
     console.log(solution);
     return solution;
   }
+  function determineHint(arr) {
+    let hint = [];
+    let counter = 0;
+    for(let num in arr) {
+      //check for non-zeros, check for zero specifically, and ignore negatives
+      if(num > 0) {
+        hint[counter]++;
+      } else if (num === 0) {
+        counter++;
+      }
+    }
+    return hint;
+  }
   function generateNewGame() {
     //not sure what should go here to start a new game...
     //reloading the page seems to work for now, as it is the only way to refresh the buttons
