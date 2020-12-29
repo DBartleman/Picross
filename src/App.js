@@ -3,7 +3,7 @@ import './App.css';
 import GameBoardGenerator from './gameBoardGenerator';
 
 function App() {
-  const [board, setBoard] = useState(<GameBoardGenerator height={3} length={3} />); // valid??????
+  //const [board, setBoard] = useState(<GameBoardGenerator height={3} length={3} />); // valid??????
   let height = 3;
   let length = 3;
   function generateSolution(height, length) {
@@ -21,11 +21,15 @@ function App() {
   function determineHint(arr) {
     let hint = [];
     let counter = 0;
-    for(let num in arr) {
+    for(let i = 0; i < arr.length; i++) {
       //check for non-zeros, check for zero specifically, and ignore negatives
-      if(num > 0) {
-        hint[counter]++;
-      } else if (num === 0) {
+      if(arr[i] > 0) {
+        if(!hint[counter]) {
+          hint.push(1);
+        } else {
+          hint[counter]++;
+        }
+      } else if (arr[i] === 0) {
         counter++;
       }
     }
@@ -61,7 +65,8 @@ function App() {
           <button onClick={generateNewGame} className="newGameButton">Generate New Game<br />(reloads page)</button>
           <button onClick={generateSolution(height, length)}> Log Sample Solution<br />(testing) </button>
         </div>
-        
+        {console.log(determineHint([1, 0, 1, 1, 1, 0, 1, 1]))}
+        <p>hint: {determineHint([1, 0, 1, 1, 1, 0, 1, 1])}</p>
         <GameBoardGenerator height length/>
       </div>
     </div>
