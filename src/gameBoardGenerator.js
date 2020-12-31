@@ -21,10 +21,12 @@ function GameBoardGenerator({height, length}) {
         }
         entireGrid.push(row);
     }
+    console.log(height);
     const style = {
         display: "grid",
-        gridTemplate: "repeat(3, 1fr) / repeat(3, 1fr)",
+        gridTemplate: `repeat(${height}, 1fr) / repeat(${length}, 1fr)`,
     };
+    console.log(style.gridTemplate);
 
     return (
         <div className="gameBoard" style={style}>
