@@ -4,27 +4,27 @@
  * @param {integer} length - the length of the grid, or how many buttons horizontally
  */
 
-function GameBoardGenerator({height, length}) { 
+function GameBoardGenerator(dimensions) { 
     function reveal(e) {
         //e.preventDefault();
         e.target.className = "tileButtonFilled tileButton";
         e.target.disabled = true;
     }
-    if(height > 51 || length > 51) {
+    if (dimensions.height > 51 || dimensions.length > 51) {
         return(<div />);
     }
     let entireGrid = [];
-    for (let i = 0; i < height; i++) {
+    for (let i = 0; i < dimensions.height; i++) {
         let row = [];
-        for (let j = 0; j < length; j++) {
+        for (let j = 0; j < dimensions.length; j++) {
             row.push(<button onClick={reveal} className="tileButtonDefault tileButton"> </button>);
         }
         entireGrid.push(row);
     }
-    console.log(height);
+    console.log(dimensions.height);
     const style = {
         display: "grid",
-        gridTemplate: `repeat(${height}, 1fr) / repeat(${length}, 1fr)`,
+        gridTemplate: `repeat(${dimensions.height}, 1fr) / repeat(${dimensions.length}, 1fr)`,
     };
     console.log(style.gridTemplate);
 

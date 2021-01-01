@@ -6,6 +6,7 @@ function App() {
   //const [board, setBoard] = useState(<GameBoardGenerator height={3} length={3} />); // valid??????
   let height = 3;
   let length = 3;
+  let dimensions = {height, length};
   function generateSolution(height, length) {
     let solution = []; 
     for(let i = 0; i < height; i++) {
@@ -67,7 +68,7 @@ function App() {
         </div>
         {console.log(determineHint([1, 0, 1, 1, 1, 0, 1, 1]))}
         <p>hint: {determineHint([1, 0, 1, 1, 1, 0, 1, 1])}</p>
-        <GameBoardGenerator height length/>
+        <GameBoardGenerator dimensions />
       </div>
     </div>
   );
